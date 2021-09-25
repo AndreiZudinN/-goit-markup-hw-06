@@ -208,13 +208,33 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+  display: flex;
+  justify-content: flex-start;
   width: 528px;
   height: 581px;
+  color: #000000;
   background-color: #fff;
   box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
     0px 2px 1px rgb(0 0 0 / 20%);
   border-radius: 4px;
+}
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 40px 39px 41px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: #212121;
+}
+.modal-form label {
+  text-align: left;
 }
 .button-modal {
   position: absolute;
@@ -232,6 +252,11 @@ img {
   margin: 0;
   padding: 0;
   background-color: #fff;
+}
+.modal-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
 }
 .close-modal {
   fill: currentColor;
@@ -554,7 +579,63 @@ img {
 .link-icon-footer:hover {
   background-color: var(--accent-color);
 }
-
+.subscription {
+  display: flex;
+  align-items: flex-end;
+  margin-left: 93px;
+}
+.sub-field {
+  display: flex;
+  flex-direction: column;
+}
+.sub-label {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+}
+.sub-input {
+  width: 358px;
+  height: 50px;
+  padding: 15px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.3;
+  align-items: center;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #2f303a;
+}
+.sub-button {
+  margin-left: 12px;
+  width: 200px;
+  height: 50px;
+  padding: 10px 28px 29px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.9;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  border-radius: 4px;
+  border-style: none;
+  color: #ffffff;
+  background-color: var(--accent-color);
+}
+.sub-icon {
+  fill: #ffffff;
+}
 /* PORTFOLIO */
 .portfolio-section {
   padding: 94px 0;
