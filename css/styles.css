@@ -188,6 +188,7 @@ img {
 .hero-button:focus {
   background-color: #188ce8;
 }
+/* МОДАЛЬНОЕ ОКНО */
 .backdrop {
   position: fixed;
   top: 0;
@@ -219,10 +220,11 @@ img {
   border-radius: 4px;
 }
 .modal-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 40px 39px 41px;
+  padding: 40px;
+}
+.modal-form > p {
+  padding: 0;
+  margin-bottom: 12px;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
@@ -231,10 +233,154 @@ img {
   text-align: center;
   letter-spacing: 0.03em;
 
-  color: #212121;
+  color: var(--title-text-color);
+}
+
+.modal-form-input {
+  position: relative;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form-input:nth-child(5) {
+  margin-bottom: 20px;
+}
+.modal-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
 }
 .modal-form label {
   text-align: left;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: var(--primary-text-color);
+}
+.modal-form-input label {
+  margin-bottom: 4px;
+}
+.modal-form-input input {
+  width: 100%;
+  padding: 11px 12px 11px 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+.modal-form-input input:focus,
+.modal-form-input input:hover {
+  border: 1px solid var(--accent-color);
+}
+.modal-form-input input:focus + .modal-form-icon,
+.modal-form-input input:hover + .modal-form-icon {
+  fill: var(--accent-color);
+}
+.modal-form-input textarea {
+  padding: 12px 16px;
+  width: 448px;
+  height: 120px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  transition: border var(--timing) var(--cubic);
+}
+.modal-form-input textarea:hover,
+.modal-form-input textarea:focus {
+  border: 1px solid var(--accent-color);
+}
+.input {
+  outline: none;
+  transition: border var(--timing) var(--cubic);
+}
+.input:focus {
+  border: 1px solid var(--accent-color);
+}
+.modal-checkbox {
+  display: inline-block;
+  margin-bottom: 30px;
+}
+.checkbox input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+.checkbox span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: var(--title-text-color);
+}
+.checkbox-icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 8.38px;
+  border: 2px solid var(--title-text-color);
+  border-radius: 2px;
+
+  transition: border-color var(--timing) var(--cubic),
+    background-color var(--timing) var(--cubic);
+}
+
+.checkbox:checked ~ .checkbox-icon {
+  border-color: transparent;
+  background-color: var(--accent-color);
+  background-image: url(../images/Vector.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  background-origin: border-box;
+}
+.modal-checkbox a {
+  color: var(--accent-color);
+}
+.button-submit {
+  padding: 10px 55px 10px 56px;
+  width: 200px;
+  height: 50px;
+  border: 1px solid transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.9;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  transition: background-color var(--timing) var(--cubic);
+}
+.button-submit:hover,
+.button-submit:focus {
+  background-color: #188ce8;
 }
 .button-modal {
   position: absolute;
@@ -252,15 +398,16 @@ img {
   margin: 0;
   padding: 0;
   background-color: #fff;
-}
-.modal-checkbox {
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
+  transition: fill var(--timing) var(--cubic);
 }
 .close-modal {
   fill: currentColor;
 }
+.button-modal:hover .close-modal,
+.button-modal:focus .close-modal {
+  fill: var(--accent-color);
+}
+
 /* Section */
 .section {
   padding-top: 94px;
