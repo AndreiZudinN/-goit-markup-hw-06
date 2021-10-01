@@ -204,11 +204,14 @@ img {
   pointer-events: none;
   visibility: hidden;
 }
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+}
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   justify-content: flex-start;
   width: 528px;
@@ -218,6 +221,11 @@ img {
   box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
     0px 2px 1px rgb(0 0 0 / 20%);
   border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform var(--timing) var(--cubic),
+    opacity var(--timing) var(--cubic), visibility var(--timing) var(--cubic);
+  opacity: 1;
+  /* z-index: 2; */
 }
 .modal-form {
   padding: 40px;
@@ -347,7 +355,7 @@ img {
     background-color var(--timing) var(--cubic);
 }
 
-.checkbox:checked ~ .checkbox-icon {
+.checkbox input:checked ~ .checkbox-icon {
   border-color: transparent;
   background-color: var(--accent-color);
   background-image: url(../images/Vector.svg);
@@ -622,6 +630,8 @@ img {
   border: 1px solid var(--accent-color);
 }
 .icon-client {
+  width: 106px;
+  height: 60px;
 }
 /* footer */
 .footer {
@@ -678,6 +688,7 @@ img {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.7;
+  transition: color var(--timing) var(--cubic);
 }
 .footer-adress .link-footer:hover,
 .footer-adress .link-footer:focus {
